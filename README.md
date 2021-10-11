@@ -1,7 +1,7 @@
 # Prerequisite
 As a pre-requisite, checkout Ascent and AMR-Wind
 
-```git
+```bat
 [Ascent]
 git clone --recursive https://github.com/Alpine-DAV/ascent.git
 cd ascent
@@ -26,7 +26,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 
 1. Perform a build of Ascent as usual
 
-    ```
+    ```bat
     [ascent]
     python scripts/uberenv/uberenv.py \
         --install --prefix "install" \
@@ -38,7 +38,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     Conduit is built by Spack, and all depdenencies are stored in the paths following the </br>
     `<ascent install>/spack/opt/spack/<platform>/<compilter>/<package>` pattern
 
-    ```
+    ```bat
     [amr-wind/build]
     cmake \
       -DAMR_WIND_ENABLE_TESTS:BOOL=ON  \
