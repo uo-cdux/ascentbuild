@@ -198,7 +198,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 	      -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install  \
 	      ../src
 	```
-	Once the configuration is successfully completed, you can execute `make -j 4 install` to finish the build and install
+	Once the configuration is successfully completed, you can execute `make -j 4 install` to finish the build and install</br>
 	**Note: We've created another install directory in our sandbox directory.</br> For AMR-Wind you'll use the Ascent installation from this directory.**
 
 5. Checkout and build AMR-Wind with your new Ascent
