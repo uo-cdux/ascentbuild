@@ -191,31 +191,31 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     
 4. Finally, we are ready to re-build Ascent in the sandbox directory</br>
     Once again, make sure the path to VTK-m and VTK-h are updated in the `.cmake` file that we copied to the sandbox
-```bat
-[ascent/sandbox]
-cmake -C alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake \
-      -DASCENT_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install \
-      -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install  \
-      ../src
-```
-Once the configuration is successfully completed, you can execute `make -j 4 install` to finish the build and install
-**Note: We've created another install directory in our sandbox directory.</br> For AMR-Wind you'll use the Ascent installation from this directory.**
+	```bat
+	[ascent/sandbox]
+	cmake -C alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake \
+	      -DASCENT_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install \
+	      -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install  \
+	      ../src
+	```
+	Once the configuration is successfully completed, you can execute `make -j 4 install` to finish the build and install
+	**Note: We've created another install directory in our sandbox directory.</br> For AMR-Wind you'll use the Ascent installation from this directory.**
 
 5. Checkout and build AMR-Wind with your new Ascent
-```bat
-[amr-wind/build]
-git clone git@github.com:Exawind/amr-wind.git
-cd amr-wind
-mkdir build
-cd build
-cmake \
-  -DAMR_WIND_ENABLE_TESTS:BOOL=ON  \
-  -DAMR_WIND_ENABLE_ASCENT:BOOL=ON \
-  -DAscent_DIR:PATH="/research/Abhishek/2.0/ascent/build/ascent-install/lib/cmake/ascent" \
-  -DConduit_DIR:PATH="/research/Abhishek/2.0/ascent/build/spack/opt/spack/linux-ubuntu18.04-haswell/gcc-7.4.0/conduit-develop-rnqtrx4bajr4jsrmgqtb3z25ntdnakem" \
-  ..
-```
-Note: Pick the correct Conduit and Ascent paths from your installation.  
+	```bat
+	[amr-wind/build]
+	git clone git@github.com:Exawind/amr-wind.git
+	cd amr-wind
+	mkdir build
+	cd build
+	cmake \
+	  -DAMR_WIND_ENABLE_TESTS:BOOL=ON  \
+	  -DAMR_WIND_ENABLE_ASCENT:BOOL=ON \
+	  -DAscent_DIR:PATH="/research/Abhishek/2.0/ascent/build/ascent-install/lib/cmake/ascent" \
+	  -DConduit_DIR:PATH="/research/Abhishek/2.0/ascent/build/spack/opt/spack/linux-ubuntu18.04-haswell/gcc-7.4.0/conduit-develop-rnqtrx4bajr4jsrmgqtb3z25ntdnakem" \
+	  ..
+	```
+	Note: Pick the correct Conduit and Ascent paths from your installation.  
 
 6. Anytime you make any changes to VTK-m,</br> you follow the following pipeline to see your changes propogate across the various tools
 	1. `make -j 4 install` for VTK-m
