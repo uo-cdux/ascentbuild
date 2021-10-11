@@ -188,7 +188,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 4. Finally, we are ready to re-build Ascent in the sandbox directory</br>
     Once again, make sure the path to VTK-m and VTK-h are updated in the `.cmake` file that we copied to the sandbox
 ```
-[ascent sandbox]
+[ascent/sandbox]
 cmake -C alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake \
       -DASCENT_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install \
       -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install  \
