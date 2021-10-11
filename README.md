@@ -24,6 +24,8 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 |-ascent</br>
 |&emsp;|-*install*</br>
 
+## Steps
+
 1. Perform a build of Ascent as usual
 
     ```bat
@@ -64,7 +66,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 
 # Building Ascent : Concurrent development of VTK-m and VTK-h
 
-# Reference Directory Structure
+## Reference Directory Structure
 *Base Directory* </br>
 |-*amr-wind* </br>
 |&emsp;|-*build*</br>
@@ -78,6 +80,8 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 |-*vtk-m*</br>
 |&emsp;|-*build*</br>
 |&emsp;|-*install*</br>
+
+## Steps
 
 1. You'd perform a build of ascent as usual -- i.e., ascent is going to use it's own VTK-m and VTK-h to start with.</br>
    We're going to override these further. 
