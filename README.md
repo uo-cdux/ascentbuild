@@ -51,7 +51,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     You might be required to use the same `cmake` that was used to build Ascent.</br>
     In that case find cmake in the same way how conduit was provided in the above command.
     
-    ```
+    ```bat
     [amr-wind/build]
     /research/Abhishek/2.0/ascent/install/spack/opt/spack/linux-ubuntu18.04-haswell/gcc-7.4.0/cmake-3.20.2-uinuzp7bedqoujagywqjdov5rzpu4uld/bin/cmake \
       -DAMR_WIND_ENABLE_TESTS:BOOL=ON  \
@@ -83,7 +83,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
    We're going to override these further. 
    Just use the following command from your Ascent repository and to begin the build for ascent.
 
-    ```
+    ```bat
     [ascent]
     python scripts/uberenv/uberenv.py \
     --install --prefix "install" \
@@ -123,7 +123,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     ```
     and invoke the build command like
     
-    ```
+    ```bat
     [ascent]
     python scripts/uberenv/uberenv.py
         --install --prefix "install" \
@@ -137,7 +137,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     We need to perform two tasks here:</br>
     1. Create the sandbox directory</br>
     2. Copy the `.cmake` file from your install directory to the sandbox directory</br>
-    ```
+    ```bat
     [ascent]
     mkdir sandbox
     cp ../install/alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake .
@@ -148,7 +148,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 
     If you end up chosing incompatible versions of VTK-m or VTK-h, it'll upset Ascent.</br>
     The git hashes provided on the webpage are meant to work together.</br>
-    ```
+    ```bat
     [vtk-m/build]
     cmake -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/vtk-m/install \
       -DCMAKE_BUILD_TYPE=Release \
@@ -172,7 +172,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     ```
     Now, VTK-h can be built using the following commang
 
-    ```
+    ```bat
     [vtk-h/build]
     cmake -C /research/Abhishek/2.0/ascent/sandbox/alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake  \
         -DCMAKE_INSTALL_PREFIX=/research/Abhishek/2.0/vtk-h/install \
@@ -187,7 +187,7 @@ The steps listed below are meant for building Ascent and all it's dependencies u
     
 4. Finally, we are ready to re-build Ascent in the sandbox directory</br>
     Once again, make sure the path to VTK-m and VTK-h are updated in the `.cmake` file that we copied to the sandbox
-```
+```bat
 [ascent/sandbox]
 cmake -C alaska-linux-ubuntu18.04-haswell-gcc@7.4.0-ascent-dryv7jcuzehjhxsgqoory5yskw5jsqej.cmake \
       -DASCENT_INSTALL_PREFIX=/research/Abhishek/2.0/ascent/sandbox/install \
@@ -198,7 +198,7 @@ Once the configuration is successfully completed, you can execute `make -j 4 ins
 **Note: We've created another install directory in our sandbox directory.</br> For AMR-Wind you'll use the Ascent installation from this directory.**
 
 5. Checkout and build AMR-Wind with your new Ascent
-```
+```bat
 [amr-wind/build]
 git clone git@github.com:Exawind/amr-wind.git
 cd amr-wind
