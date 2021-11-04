@@ -204,14 +204,14 @@ The steps listed below are meant for building Ascent and all it's dependencies u
 5. Checkout and build AMR-Wind with your new Ascent
 	```bat
 	[amr-wind/build]
-	git clone git@github.com:Exawind/amr-wind.git
+	git clone --recursive https://github.com/exawind/amr-wind.git
 	cd amr-wind
 	mkdir build
 	cd build
 	cmake \
 	  -DAMR_WIND_ENABLE_TESTS:BOOL=ON  \
 	  -DAMR_WIND_ENABLE_ASCENT:BOOL=ON \
-	  -DAscent_DIR:PATH="/research/Abhishek/2.0/ascent/build/ascent-install/lib/cmake/ascent" \
+	  -DAscent_DIR:PATH="/research/Abhishek/2.0/ascent/sandbox/install/lib/cmake/ascent"" \
 	  -DConduit_DIR:PATH="/research/Abhishek/2.0/ascent/build/spack/opt/spack/linux-ubuntu18.04-haswell/gcc-7.4.0/conduit-develop-rnqtrx4bajr4jsrmgqtb3z25ntdnakem" \
 	  ..
 	```
